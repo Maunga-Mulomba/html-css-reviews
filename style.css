@@ -1,0 +1,241 @@
+:root {
+  --highlight: #fcd840;
+  --gradient-space: #f4f6f8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #daf1f0, white);
+}
+
+.container {
+  margin: 3rem 0;
+  width: 40%;
+  border-radius: 15px;
+  background-color: #f3f5f7;
+  color: grey;
+  box-shadow: 0 4px 9px 3px #daf1f0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #00b1b7, #00bea9);
+  border-radius: 15px 15px 0 0;
+  color: white;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.header i {
+  font-size: 1.2rem;
+}
+
+.header__add {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratings {
+  background-color: white;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.ratings__average {
+  text-align: center;
+}
+
+.ratings__average span {
+  font-weight: 600;
+}
+
+.ratings__average--icon {
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+  font-size: 17px;
+  color: white;
+  background-color: var(--highlight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.ratings__average p:last-of-type {
+  font-size: 0.8rem;
+}
+
+.ratings__individual {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ratings__individual--rank {
+  display: grid;
+  grid-template-columns: 70px 150px 70px;
+  gap: 0.5rem;
+}
+
+.ratings__individual--rank p:nth-of-type(1) {
+  text-align: right;
+}
+.ratings__individual--rank p:nth-of-type(3) {
+  text-align: left;
+}
+
+.ratings__individual--rank > div {
+  width: 150px;
+  height: 25px;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 0px -1px 2px 0 rgb(189, 189, 189), 0 1px 2px 0 white;
+}
+
+.ratings__individual--rank:first-of-type > div {
+  background: linear-gradient(
+    to right,
+    var(--highlight) 80%,
+    var(--gradient-space) 80%
+  );
+}
+
+.ratings__individual--rank:nth-child(2) > div {
+  background: linear-gradient(
+    to right,
+    var(--highlight) 50%,
+    var(--gradient-space) 50%
+  );
+}
+.ratings__individual--rank:nth-child(3) > div {
+  background: linear-gradient(
+    to right,
+    var(--highlight) 30%,
+    var(--gradient-space) 30%
+  );
+}
+.ratings__individual--rank:nth-child(4) > div {
+  background: linear-gradient(
+    to right,
+    var(--highlight) 15%,
+    var(--gradient-space) 15%
+  );
+}
+.ratings__individual--rank:nth-child(5) > div {
+  background: linear-gradient(
+    to right,
+    var(--highlight) 5%,
+    var(--gradient-space) 5%
+  );
+}
+
+/* USERS */
+.users {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0 0 15px 15px;
+}
+
+.users h2 {
+  font-size: 1.1rem;
+}
+
+.users > div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  margin-bottom: 1rem;
+}
+
+.bottom-divider {
+  border-bottom: 2px solid rgba(233, 233, 233, 0.683);
+  padding-bottom: 1rem;
+}
+
+.users > div p {
+  font-size: 0.9rem;
+}
+
+.users__picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 40%;
+  background-size: cover;
+}
+
+.picture-1 {
+  background-image: url("https://images.pexels.com/photos/9571268/pexels-photo-9571268.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load");
+}
+.picture-2 {
+  background-image: url("https://images.pexels.com/photos/5220075/pexels-photo-5220075.jpeg?auto=compress&cs=tinysrgb&w=600");
+}
+.picture-3 {
+  background-image: url("https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=600");
+}
+
+.users > div i {
+  color: var(--highlight);
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  .ratings__individual--rank {
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .ratings {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+  .ratings__individual--rank {
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 0.8rem;
+  }
+}
